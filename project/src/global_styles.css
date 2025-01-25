@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-50;
+}
+
+.timeline-item {
+  @apply relative pl-8 pb-8 border-l-2 border-primary last:border-l-0;
+}
+
+.timeline-dot {
+  @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .5;
+    transform: scale(1.1);
+  }
+}
+
+.section {
+  @apply py-20 px-4 md:px-8;
+}
+
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-2 rounded-lg transition-all duration-300;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Smooth reveal animation for sections */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealSection 0.8s cubic-bezier(0.35, 0, 0.25, 1) forwards;
+}
+
+@keyframes revealSection {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientFlow 15s ease infinite;
+}

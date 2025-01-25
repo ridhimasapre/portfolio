@@ -1,0 +1,50 @@
+<section id="contact" class="section bg-white">
+    <div class="container">
+      <h2 class="text-4xl text-primary font-bold text-center mb-12" @fadeInUp>Get in Touch</h2>
+      <div class="max-w-2xl mx-auto">
+        <form (ngSubmit)="onSubmit()" class="space-y-6">
+          <div @fadeInUp>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              [(ngModel)]="formData.name"
+              class="mt-1 p-4 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary transform transition-all duration-300 hover:scale-[1.02]"
+              required
+            >
+          </div>
+          
+          <div @fadeInUp>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              name="email"
+              [(ngModel)]="formData.email"
+              class="mt-1 p-4 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary transform transition-all duration-300 hover:scale-[1.02]"
+              required
+            >
+          </div>
+          
+          <div @fadeInUp>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Message"
+              [(ngModel)]="formData.message"
+              rows="4"
+              class="mt-1 p-4 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary transform transition-all duration-300 hover:scale-[1.02]"
+              required
+            ></textarea>
+          </div>
+          
+          <div class="text-center" @fadeInUp>
+            <button type="submit" class="btn-primary transform transition-all duration-300 hover:scale-110">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,55 @@
+<nav [class]="'fixed w-full z-50 transition-all duration-300 ' + (isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5')">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="text-2xl font-bold" [class]="isScrolled ? 'text-primary' : 'text-white'">
+          RS
+        </a>
+  
+        <div class="hidden md:flex text-xl items-center space-x-8">
+          <a href="#about" [class]="'hover:text-primary  transition-colors ' + (isScrolled ? 'text-gray-700' : 'text-white')">About</a>
+          <a href="#experience" [class]="'hover:text-primary transition-colors ' + (isScrolled ? 'text-gray-700' : 'text-white')">Experience</a>
+          <a href="#projects" [class]="'hover:text-primary transition-colors ' + (isScrolled ? 'text-gray-700' : 'text-white')">Projects</a>
+          <a href="#contact" [class]="'hover:text-primary transition-colors ' + (isScrolled ? 'text-gray-700' : 'text-white')">Contact</a>
+        </div>
+  
+        <!-- Social Icons -->
+        <div class=" md:flex items-center space-x-4">
+          <!-- Social Media Links -->
+          <a href="https://github.com" target="_blank" [class]="'transition-colors hover:text-primary ' + (isScrolled ? 'text-gray-700' : 'text-white')">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="..." />
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" [class]="'transition-colors hover:text-primary ' + (isScrolled ? 'text-gray-700' : 'text-white')">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="..." />
+            </svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" [class]="'transition-colors hover:text-primary ' + (isScrolled ? 'text-gray-700' : 'text-white')">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="..." />
+            </svg>
+          </a>
+        </div>
+  
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden" (click)="isMenuOpen = !isMenuOpen">
+          <svg class="w-6 h-6" [class]="isScrolled ? 'text-gray-700' : 'text-white'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+  
+      <!-- Mobile Menu -->
+      <div class="md:hidden" [class.hidden]="!isMenuOpen">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white mt-4 rounded-lg shadow-lg">
+          <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors" (click)="isMenuOpen = false">About</a>
+          <a href="#experience" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors" (click)="isMenuOpen = false">Experience</a>
+          <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors" (click)="isMenuOpen = false">Projects</a>
+          <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors" (click)="isMenuOpen = false">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
